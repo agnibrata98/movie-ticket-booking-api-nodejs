@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import express from 'express';
+import cors from 'cors';
 import { db } from './app/config/db';
 import { swaggerDocs } from './app/swagger/swagger';
 
@@ -9,7 +10,7 @@ import { swaggerDocs } from './app/swagger/swagger';
 const app = express();
 const port = process.env.PORT || 8000;
 
-
+app.use(cors());
 app.use(express.json());
 // Register Swagger
 swaggerDocs(app);
