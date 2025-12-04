@@ -30,5 +30,5 @@ import { bookingRouter } from './app/routers/api/booking.routes';
 app.use('/api/booking', bookingRouter);
 
 db.then(() => {
-    app.listen(port, () => console.log(`Server is listening on port http://localhost:${port}`))
+    app.listen(port, () => console.log(`Server is listening on port ${port}`))
 });
