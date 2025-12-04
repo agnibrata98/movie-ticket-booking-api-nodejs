@@ -3,6 +3,7 @@ dotenv.config();
 
 import express from 'express';
 import { db } from './app/config/db';
+import { swaggerDocs } from './app/swagger/swagger';
 
 
 const app = express();
@@ -10,6 +11,8 @@ const port = process.env.PORT || 8000;
 
 
 app.use(express.json());
+// Register Swagger
+swaggerDocs(app);
 
 import { authRouter } from './app/routers/api/auth.routes';
 app.use('/api/auth', authRouter);
